@@ -10,13 +10,8 @@ router.get("", (req, res) => {
 router.post("", (req, res) => {
   let firstname = req.body.firstName;
   let email = req.body.email;
-
-  for (var i = 0; i <= userObj[0].users.length; i++) {
-    if (i.email === email) {
-      return res
-        .status(400)
-        .json({ success: true, message: "User already exists !!" });
-    }
+  if (email == null) {
+    res.status(400).json({ success: true, message: "User email missing" });
   }
 
   if (firstname != null && email != null) {

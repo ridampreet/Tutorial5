@@ -10,7 +10,7 @@ router.get("", (req, res) => {
 router.put("/:id", (req, res) => {
   var flag = 0;
   let obj = userObj[0].users;
-
+ 
   for (var i = 0; i < obj.length; i++) {
     if (
       req.params.id === obj[i].id &&
