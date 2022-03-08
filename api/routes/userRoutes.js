@@ -13,11 +13,28 @@ router.get("", (req, res) => {
 router.get("/:id", (req, res) => {
   // console.log(userObj[0].find(o => o.title == "mrs"));
   let obj = userObj[0].data;
-  console.log(obj.find(o => o.id === req.params.id));
-  return res.status(200).json({
-    success: "true",
-    user: obj.find(o => o.id === req.params.id)
-  });
+  let processed_data = obj.find(o => o.id === req.params.id);
+  // console.log(obj.find(o => o.id === req.params.id));
+  // return res.status(200).json({
+  //   success: "true",
+  //   user: obj.find(o => o.id === req.params.id)
+  // });
+
+  if (processed_data != undefined) {
+    return res.status(200).json({
+      success: "true",
+      user: {
+        email: processed_data.email,
+        firstName: processed_data.firstName,
+        id: processed_data.id
+      }
+    });
+  } else {
+    return res.status(400).json({
+      success: "true",
+      message: "No users found !"
+    });
+  }
 });
 
 module.exports = router;
