@@ -1,8 +1,6 @@
 const users = [
   {
-    message: "Users retrieved",
-    status: true,
-    data: [
+    users: [
       {
         id: "0F8JIqi4zwvb77FGz6Wt",
         firstName: "Heinz-Georg",
