@@ -27,7 +27,7 @@ router.post("", (req, res) => {
     return res.status(200).json({ success: "true", data: "User added" });
   } else {
     return res
-      .status(500)
+      .status(400)
       .json({ success: "true", data: "User cannot be added" });
   }
 });
