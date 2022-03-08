@@ -5,7 +5,7 @@ const userObj = require("../dummydatabase/users");
 router.get("", (req, res) => {
   return res
     .status(200)
-    .json({ message: "Users retrieved", success: "true", user: userObj });
+    .json({ message: "Users retrieved", success: true, user: userObj });
 });
 // router.get("/new", (req, res) => {
 //   return res.status(200).json({ success: "true", data: "user created" });
@@ -22,7 +22,7 @@ router.get("/:id", (req, res) => {
 
   if (processed_data != undefined) {
     return res.status(200).json({
-      success: "true",
+      success: true,
       user: {
         email: processed_data.email,
         firstName: processed_data.firstName,
@@ -31,7 +31,7 @@ router.get("/:id", (req, res) => {
     });
   } else {
     return res.status(400).json({
-      success: "true",
+      success: true,
       message: "No users found !"
     });
   }

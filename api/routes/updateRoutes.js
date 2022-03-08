@@ -4,7 +4,7 @@ const router = express.Router();
 const userObj = require("../dummydatabase/users");
 
 router.get("", (req, res) => {
-  return res.status(200).json({ success: "true", data: "chal gaya!!!!" });
+  return res.status(200).json({ success: true, data: "Welcome" });
 });
 
 router.put("/:id", (req, res) => {
@@ -23,9 +23,9 @@ router.put("/:id", (req, res) => {
     }
   }
   if (flag === 1) {
-    res.status(200).json({ success: "true", message: "User Updated" });
+    res.status(200).json({ success: true, message: "User Updated" });
   } else {
-    res.status(400).json({ success: "true", message: "User Not Found !!" });
+    res.status(400).json({ success: true, message: "User Not Found !!" });
   }
 });
 
