@@ -12,7 +12,11 @@ router.put("/:id", (req, res) => {
   let obj = userObj[0].data;
 
   for (var i = 0; i < obj.length; i++) {
-    if (req.params.id === obj[i].id) {
+    if (
+      req.params.id === obj[i].id &&
+      req.body.email != null &&
+      req.body.firstName != null
+    ) {
       flag = 1;
       obj[i].firstName = req.body.firstName;
       obj[i].email = req.body.email;
